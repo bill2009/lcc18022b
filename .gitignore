@@ -1,0 +1,8 @@
+*.lst
+*.pyc
+*.asm
+*.oasm
+*.i
+*.hex
+*.basm
+*.p

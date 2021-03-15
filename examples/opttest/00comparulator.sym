@@ -1,0 +1,1926 @@
+export scomparulator
+segment text
+function scomparulator type=void function(long int,long int) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=8
+caller x type=long int sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller y type=long int sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+callee x type=long int sclass=register scope=PARAM flags=0 offset=0 ref=7.000000
+callee y type=long int sclass=register scope=PARAM flags=0 offset=2 ref=7.000000
+blockbeg off=0
+local ix type=long int sclass=auto scope=LOCAL flags=0 offset=0 ref=2.000000
+local iy type=long int sclass=auto scope=LOCAL flags=0 offset=2 ref=2.000000
+blockend off=4
+ 2. ADDRFP2 x
+4. ADDRFP2 x
+3. INDIRI2 #4
+1' ASGNI2 #2 #3 2 1
+ 2. ADDRFP2 y
+4. ADDRFP2 y
+3. INDIRI2 #4
+1' ASGNI2 #2 #3 2 1
+;void scomparulator(long x,long y){
+00comparulator.c:22.33:
+;	int16_t ix=x; int16_t iy=y;
+00comparulator.c:23.12:
+ 2. ADDRLP2 ix
+4. ADDRFP2 x
+3. INDIRI2 #4
+1' ASGNI2 #2 #3 2 1
+00comparulator.c:23.26:
+ 2. ADDRLP2 iy
+4. ADDRFP2 y
+3. INDIRI2 #4
+1' ASGNI2 #2 #3 2 1
+;	printf("for %d:%d scomparulator sez ",ix,iy);
+00comparulator.c:24.1:
+ 2. ADDRGP2 2
+1' ARGP2 #2 2 1
+5. ADDRLP2 ix
+4. INDIRI2 #5
+3' ARGI2 #4 2 1
+8. ADDRLP2 iy
+7. INDIRI2 #8
+6' ARGI2 #7 2 1
+10. ADDRGP2 printf
+9' CALLV #10 {void function(pointer to char,...)}
+;	if (x<y) printf(" <");
+00comparulator.c:25.5:
+ 3. ADDRFP2 x
+2. INDIRI2 #3
+5. ADDRFP2 y
+4. INDIRI2 #5
+1' GEI2 #2 #4 3
+00comparulator.c:25.10:
+ 2. ADDRGP2 5
+1' ARGP2 #2 2 1
+4. ADDRGP2 printf
+3' CALLV #4 {void function(pointer to char,...)}
+ 3:
+;	if (x<=y) printf(" <=");
+00comparulator.c:26.5:
+ 3. ADDRFP2 x
+2. INDIRI2 #3
+5. ADDRFP2 y
+4. INDIRI2 #5
+1' GTI2 #2 #4 6
+00comparulator.c:26.11:
+ 2. ADDRGP2 8
+1' ARGP2 #2 2 1
+4. ADDRGP2 printf
+3' CALLV #4 {void function(pointer to char,...)}
+ 6:
+;	if (x==y) printf(" =");
+00comparulator.c:27.5:
+ 3. ADDRFP2 x
+2. INDIRI2 #3
+5. ADDRFP2 y
+4. INDIRI2 #5
+1' NEI2 #2 #4 9
+00comparulator.c:27.11:
+ 2. ADDRGP2 11
+1' ARGP2 #2 2 1
+4. ADDRGP2 printf
+3' CALLV #4 {void function(pointer to char,...)}
+ 9:
+;	if (x!=y) printf(" !=");
+00comparulator.c:28.5:
+ 3. ADDRFP2 x
+2. INDIRI2 #3
+5. ADDRFP2 y
+4. INDIRI2 #5
+1' EQI2 #2 #4 12
+00comparulator.c:28.11:
+ 2. ADDRGP2 14
+1' ARGP2 #2 2 1
+4. ADDRGP2 printf
+3' CALLV #4 {void function(pointer to char,...)}
+ 12:
+;	if (x>y) printf(" >");
+00comparulator.c:29.5:
+ 3. ADDRFP2 x
+2. INDIRI2 #3
+5. ADDRFP2 y
+4. INDIRI2 #5
+1' LEI2 #2 #4 15
+00comparulator.c:29.10:
+ 2. ADDRGP2 17
+1' ARGP2 #2 2 1
+4. ADDRGP2 printf
+3' CALLV #4 {void function(pointer to char,...)}
+ 15:
+;	if (x>=y) printf(" >=");
+00comparulator.c:30.5:
+ 3. ADDRFP2 x
+2. INDIRI2 #3
+5. ADDRFP2 y
+4. INDIRI2 #5
+1' LTI2 #2 #4 18
+00comparulator.c:30.11:
+ 2. ADDRGP2 20
+1' ARGP2 #2 2 1
+4. ADDRGP2 printf
+3' CALLV #4 {void function(pointer to char,...)}
+ 18:
+;	printf("\n");
+00comparulator.c:31.1:
+ 2. ADDRGP2 21
+1' ARGP2 #2 2 1
+4. ADDRGP2 printf
+3' CALLV #4 {void function(pointer to char,...)}
+;}
+00comparulator.c:32.0:
+ 1:
+maxoff=4
+export main
+function main type=void function(void) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=4
+blockbeg off=0
+blockend off=0
+;void main( ) {
+00comparulator.c:33.13:
+;comparulator(0,0);
+00comparulator.c:43.0:
+ 2. CNSTI1 count=2 0
+1' ARGI1 #2 1 1
+3' ARGI1 #2 1 1
+5. ADDRGP2 comparulator
+4' CALLI1 #5 {int function}
+;comparulator(0,1);
+00comparulator.c:44.0:
+ 2. CNSTI1 0
+1' ARGI1 #2 1 1
+4. CNSTI1 1
+3' ARGI1 #4 1 1
+6. ADDRGP2 comparulator
+5' CALLI1 #6 {int function}
+;comparulator(1,1);
+00comparulator.c:45.0:
+ 2. CNSTI1 count=2 1
+1' ARGI1 #2 1 1
+3' ARGI1 #2 1 1
+5. ADDRGP2 comparulator
+4' CALLI1 #5 {int function}
+;comparulator(1,0);
+00comparulator.c:46.0:
+ 2. CNSTI1 1
+1' ARGI1 #2 1 1
+4. CNSTI1 0
+3' ARGI1 #4 1 1
+6. ADDRGP2 comparulator
+5' CALLI1 #6 {int function}
+;}
+00comparulator.c:48.0:
+ 22:
+maxoff=0
+export strncmp
+function strncmp type=long int function(pointer to const char,pointer to const char,unsigned long) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller s1 type=pointer to const char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller s2 type=pointer to const char sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+caller n type=unsigned long sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+callee s1 type=pointer to const char sclass=register scope=PARAM flags=0 offset=0 ref=30.000000
+callee s2 type=pointer to const char sclass=register scope=PARAM flags=0 offset=2 ref=25.000000
+callee n type=unsigned long sclass=register scope=PARAM flags=0 offset=4 ref=20.000000
+blockbeg off=0
+local 30 type=int sclass=register scope=LOCAL flags=generated offset=0 ref=15.000000
+blockend off=1
+ 2. ADDRFP2 s1
+4. ADDRFP2 s1
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+ 2. ADDRFP2 s2
+4. ADDRFP2 s2
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+ 2. ADDRFP2 n
+4. ADDRFP2 n
+3. INDIRU2 #4
+1' ASGNU2 #2 #3 2 1
+;{
+./nstdlib.c:27.0:
+;    for ( ; n > 0; s1++, s2++, --n)
+./nstdlib.c:28.10:
+ 2. ADDRGP2 27
+1' JUMPV #2
+ 24:
+;	if (*s1 != *s2)
+./nstdlib.c:29.5:
+ 4. ADDRFP2 s1
+3. INDIRP2 #4
+2. INDIRI1 #3
+7. ADDRFP2 s2
+6. INDIRP2 #7
+5. INDIRI1 #6
+1' EQI1 #2 #5 28
+;	    return ((*(unsigned char *)s1 < *(unsigned char *)s2) ? -1 : +1);
+./nstdlib.c:30.12:
+ 5. ADDRFP2 s1
+4. INDIRP2 #5
+3. INDIRU1 #4
+2. CVUI1 #3 1
+9. ADDRFP2 s2
+8. INDIRP2 #9
+7. INDIRU1 #8
+6. CVUI1 #7 1
+1' GEI1 #2 #6 31
+11. ADDRLP2 30
+12. CNSTI1 -1
+10' ASGNI1 #11 #12 1 1
+14. ADDRGP2 32
+13' JUMPV #14
+31:
+17. ADDRLP2 30
+18. CNSTI1 1
+16' ASGNI1 #17 #18 1 1
+32:
+23. ADDRLP2 30
+22. INDIRI1 #23
+21. CVII2 #22 1
+20' RETI2 #21
+ 2. ADDRGP2 23
+1' JUMPV #2
+ 28:
+;	else if (*s1 == '\0')
+./nstdlib.c:31.10:
+ 4. ADDRFP2 s1
+3. INDIRP2 #4
+2. INDIRI1 #3
+5. CNSTI1 0
+1' NEI1 #2 #5 33
+;	    return 0;
+./nstdlib.c:32.12:
+ 2. CNSTI2 0
+1' RETI2 #2
+ 2. ADDRGP2 23
+1' JUMPV #2
+ 33:
+ 25:
+;    for ( ; n > 0; s1++, s2++, --n)
+./nstdlib.c:28.19:
+ 2. ADDRFP2 count=2 s1
+4. INDIRP2 #2
+5. CNSTI2 count=2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+7. ADDRFP2 count=2 s2
+9. INDIRP2 #7
+8. ADDP2 #9 #5
+6' ASGNP2 #7 #8 2 1
+11. ADDRFP2 count=2 n
+13. INDIRU2 #11
+14. CNSTU2 1
+12. SUBU2 #13 #14
+10' ASGNU2 #11 #12 2 1
+ 27:
+./nstdlib.c:28.12:
+ 3. ADDRFP2 n
+2. INDIRU2 #3
+4. CNSTU2 0
+1' NEU2 #2 #4 24
+;    return 0;
+./nstdlib.c:33.11:
+ 2. CNSTI2 0
+1' RETI2 #2
+ 23:
+maxoff=1
+export strlen
+function strlen type=unsigned long function(pointer to char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller str type=pointer to char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee str type=pointer to char sclass=register scope=PARAM flags=0 offset=0 ref=20.000000
+blockbeg off=0
+local slen type=unsigned long sclass=register scope=LOCAL flags=0 offset=0 ref=12.000000
+blockbeg off=2
+blockend off=2
+blockend off=2
+ 2. ADDRFP2 str
+4. ADDRFP2 str
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;{
+./nstdlib.c:37.0:
+;	uint16_t slen = 0 ;
+./nstdlib.c:38.17:
+ 2. ADDRLP2 slen
+3. CNSTU2 0
+1' ASGNU2 #2 #3 2 1
+ 2. ADDRGP2 37
+1' JUMPV #2
+ 36:
+;	while (*str != 0) {
+./nstdlib.c:39.19:
+;      slen++ ;
+./nstdlib.c:40.6:
+ 2. ADDRLP2 count=2 slen
+4. INDIRU2 #2
+5. CNSTU2 1
+3. ADDU2 #4 #5
+1' ASGNU2 #2 #3 2 1
+;      str++ ;
+./nstdlib.c:41.6:
+ 2. ADDRFP2 count=2 str
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;   }
+./nstdlib.c:42.3:
+ 37:
+;	while (*str != 0) {
+./nstdlib.c:39.8:
+ 4. ADDRFP2 str
+3. INDIRP2 #4
+2. INDIRI1 #3
+5. CNSTI1 0
+1' NEI1 #2 #5 36
+;   return slen;
+./nstdlib.c:43.10:
+ 3. ADDRLP2 slen
+2. INDIRU2 #3
+1' RETU2 #2
+ 35:
+maxoff=2
+export printstr
+function printstr type=void function(pointer to char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=1
+caller ptr type=pointer to char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee ptr type=pointer to char sclass=register scope=PARAM flags=0 offset=0 ref=20.000000
+blockbeg off=0
+blockbeg off=0
+blockend off=0
+blockend off=0
+ 2. ADDRFP2 ptr
+4. ADDRFP2 ptr
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;void printstr(char *ptr){
+./nstdlib.c:45.24:
+ 2. ADDRGP2 41
+1' JUMPV #2
+ 40:
+;    while(*ptr){
+./nstdlib.c:46.15:
+;		putc(*ptr++); //jan 29
+./nstdlib.c:47.1:
+ 2. CNSTI1 7
+1' ARGI1 #2 1 1
+4. ADDRFP2 count=2 ptr
+3' INDIRP2 count=2 #4
+7. CNSTI2 1
+6. ADDP2 #3 #7
+5' ASGNP2 #4 #6 2 1
+9. INDIRI1 #3
+8' ARGI1 #9 1 1
+11. ADDRGP2 out
+10' CALLI1 #11 {int function}
+;		asm(" nop1806\n nop1806\n nop1806\n"); //17-03-09
+./nstdlib.c:48.0:
+;	}
+./nstdlib.c:49.1:
+ 41:
+;    while(*ptr){
+./nstdlib.c:46.10:
+ 4. ADDRFP2 ptr
+3. INDIRP2 #4
+2. INDIRI1 #3
+5. CNSTI1 0
+1' NEI1 #2 #5 40
+;}
+./nstdlib.c:50.0:
+ 39:
+maxoff=0
+segment lit
+global round_nums type=array 8 of const float sclass=static scope=GLOBAL flags=0 ref=0.000000
+defconst float.4 0.5
+defconst float.4 0.05
+defconst float.4 0.005
+defconst float.4 0.0005
+defconst float.4 5e-05
+defconst float.4 5e-06
+defconst float.4 5e-07
+defconst float.4 5e-08
+global mult_nums type=array 8 of const float sclass=static scope=GLOBAL flags=0 ref=0.000000
+defconst float.4 1
+defconst float.4 10
+defconst float.4 100
+defconst float.4 1000
+defconst float.4 10000
+defconst float.4 100000
+defconst float.4 1e+06
+defconst float.4 1e+07
+export ftoa
+segment text
+function ftoa type=pointer to char function(float,pointer to char,unsigned long) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=5
+caller flt type=float sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller outbfr type=pointer to char sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+caller dec_digits type=unsigned long sclass=auto scope=PARAM flags=0 offset=6 ref=0.000000
+callee flt type=float sclass=register scope=PARAM flags=0 offset=0 ref=4.000000
+callee outbfr type=pointer to char sclass=auto scope=PARAM flags=0 offset=4 ref=2.000000
+callee dec_digits type=unsigned long sclass=register scope=PARAM flags=0 offset=6 ref=4.000000
+blockbeg off=0
+local output type=pointer to char sclass=register scope=LOCAL flags=0 offset=0 ref=7.250000
+local wholeNum type=long long int sclass=register scope=LOCAL flags=0 offset=2 ref=3.000000
+local mult type=float sclass=auto scope=LOCAL flags=0 offset=6 ref=2.000000
+local decimalNum type=long long int sclass=auto scope=LOCAL flags=0 offset=10 ref=1.500000
+local idx type=unsigned long sclass=auto scope=LOCAL flags=0 offset=14 ref=0.000000
+local tbfr type=array 40 of char sclass=auto scope=LOCAL flags=addressed offset=16 ref=0.000000
+blockbeg off=56
+blockend off=56
+blockbeg off=56
+blockbeg off=56
+blockend off=56
+blockend off=56
+blockbeg off=56
+blockend off=56
+blockbeg off=56
+blockend off=56
+blockend off=56
+ 2. ADDRFP2 flt
+4. ADDRFP2 flt
+3. INDIRF4 #4
+1' ASGNF4 #2 #3 4 1
+ 2. ADDRFP2 dec_digits
+4. ADDRFP2 dec_digits
+3. INDIRU2 #4
+1' ASGNU2 #2 #3 2 1
+;{
+./nstdlib.c:73.0:
+;   char *output = outbfr ;
+./nstdlib.c:78.18:
+ 2. ADDRLP2 output
+4. ADDRFP2 outbfr
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;   if (flt < 0.0) {
+./nstdlib.c:83.7:
+ 3. ADDRFP2 flt
+2. INDIRF4 #3
+5. ADDRGP2 46
+4. INDIRF4 #5
+1' GEF4 #2 #4 44
+./nstdlib.c:83.18:
+;      *output++ = '-' ;
+./nstdlib.c:84.6:
+ 2. ADDRLP2 count=2 output
+1' INDIRP2 count=2 #2
+5. CNSTI2 1
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. CNSTI1 45
+6' ASGNI1 #1 #7 1 1
+;      flt *= -1.0 ;
+./nstdlib.c:85.6:
+ 2. ADDRFP2 count=2 flt
+5. ADDRGP2 47
+4. INDIRF4 #5
+6. INDIRF4 #2
+3. MULF4 #4 #6
+1' ASGNF4 #2 #3 4 1
+;   } else {
+./nstdlib.c:86.3:
+ 2. ADDRGP2 45
+1' JUMPV #2
+ 44:
+./nstdlib.c:86.10:
+;      if (use_leading_plus) {
+./nstdlib.c:87.10:
+ 2. ADDRGP2 48
+1' JUMPV #2
+./nstdlib.c:87.13:
+;         *output++ = '+' ;
+./nstdlib.c:88.9:
+ 2. ADDRLP2 count=2 output
+1' INDIRP2 count=2 #2
+5. CNSTI2 1
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. CNSTI1 43
+6' ASGNI1 #1 #7 1 1
+;      }
+./nstdlib.c:89.6:
+ 48:
+;   }
+./nstdlib.c:90.3:
+ 45:
+;   if (dec_digits < 8) {
+./nstdlib.c:93.7:
+ 3. ADDRFP2 dec_digits
+2. INDIRU2 #3
+4. CNSTU2 8
+1' GEU2 #2 #4 50
+./nstdlib.c:93.23:
+;      flt += round_nums[dec_digits] ;
+./nstdlib.c:94.6:
+ 2. ADDRFP2 count=2 flt
+4. INDIRF4 #2
+9. ADDRFP2 dec_digits
+8. INDIRU2 #9
+10. CNSTI1 2
+7. LSHU2 #8 #10
+11. ADDRGP2 round_nums
+6. ADDP2 #7 #11
+5. INDIRF4 #6
+3. ADDF4 #4 #5
+1' ASGNF4 #2 #3 4 1
+;   }
+./nstdlib.c:95.3:
+ 50:
+;	mult=mult_nums[dec_digits];
+./nstdlib.c:100.1:
+ 2. ADDRLP2 mult
+7. ADDRFP2 dec_digits
+6. INDIRU2 #7
+8. CNSTI1 2
+5. LSHU2 #6 #8
+9. ADDRGP2 mult_nums
+4. ADDP2 #5 #9
+3. INDIRF4 #4
+1' ASGNF4 #2 #3 4 1
+;   wholeNum = flt;
+./nstdlib.c:102.3:
+ 2. ADDRLP2 wholeNum
+5. ADDRFP2 flt
+4. INDIRF4 #5
+3. CVFI4 #4 4
+1' ASGNI4 #2 #3 4 1
+;   decimalNum = ((flt - wholeNum) * mult);
+./nstdlib.c:103.3:
+ 2. ADDRLP2 decimalNum
+7. ADDRFP2 flt
+6. INDIRF4 #7
+10. ADDRLP2 wholeNum
+9. INDIRI4 #10
+8. CVIF4 #9 4
+5. SUBF4 #6 #8
+12. ADDRLP2 mult
+11. INDIRF4 #12
+4. MULF4 #5 #11
+3. CVFI4 #4 4
+1' ASGNI4 #2 #3 4 1
+;   strcpy(output,dubdabx(wholeNum,output,1));
+./nstdlib.c:109.3:
+ 3. ADDRLP2 wholeNum
+2. INDIRI4 #3
+1' ARGI4 #2 4 1
+6. ADDRLP2 output
+5. INDIRP2 #6
+4' ARGP2 #5 2 1
+8. CNSTI2 1
+7' ARGI2 #8 2 1
+10. ADDRGP2 dubdabx
+9' CALLP2 #10 {pointer to char function(long long int,pointer to char,long int)}
+13. ADDRLP2 output
+12. INDIRP2 #13
+11' ARGP2 #12 2 1
+14' ARGP2 #9 2 1
+16. ADDRGP2 strcpy
+15' CALLP2 #16 {pointer to char function(pointer to char,pointer to const char)}
+;   output+=strlen(output);
+./nstdlib.c:110.3:
+ 3. ADDRLP2 count=3 output
+2. INDIRP2 #3
+1' ARGP2 #2 2 1
+5. ADDRGP2 strlen
+4' CALLU2 #5 {unsigned long function(pointer to char)}
+8. INDIRP2 #3
+7. ADDP2 #4 #8
+6' ASGNP2 #3 #7 2 1
+;   if (dec_digits > 0) {
+./nstdlib.c:112.7:
+ 3. ADDRFP2 dec_digits
+2. INDIRU2 #3
+4. CNSTU2 0
+1' EQU2 #2 #4 52
+./nstdlib.c:112.23:
+;		*output++ = '.' ;
+./nstdlib.c:113.2:
+ 2. ADDRLP2 count=2 output
+1' INDIRP2 count=2 #2
+5. CNSTI2 1
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. CNSTI1 46
+6' ASGNI1 #1 #7 1 1
+;		strcpy(output,dubdabx(decimalNum,output,dec_digits));
+./nstdlib.c:117.2:
+ 3. ADDRLP2 decimalNum
+2. INDIRI4 #3
+1' ARGI4 #2 4 1
+6. ADDRLP2 output
+5. INDIRP2 #6
+4' ARGP2 #5 2 1
+10. ADDRFP2 dec_digits
+9. INDIRU2 #10
+8. CVUI2 #9 2
+7' ARGI2 #8 2 1
+12. ADDRGP2 dubdabx
+11' CALLP2 #12 {pointer to char function(long long int,pointer to char,long int)}
+15. ADDRLP2 output
+14. INDIRP2 #15
+13' ARGP2 #14 2 1
+16' ARGP2 #11 2 1
+18. ADDRGP2 strcpy
+17' CALLP2 #18 {pointer to char function(pointer to char,pointer to const char)}
+;	}
+./nstdlib.c:118.1:
+ 52:
+;   return outbfr;
+./nstdlib.c:120.10:
+ 3. ADDRFP2 outbfr
+2. INDIRP2 #3
+1' RETP2 #2
+ 43:
+maxoff=56
+export itoa
+function itoa type=pointer to char function(long int,pointer to char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller s type=long int sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller buffer type=pointer to char sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+callee s type=long int sclass=auto scope=PARAM flags=0 offset=0 ref=2.000000
+callee buffer type=pointer to char sclass=auto scope=PARAM flags=0 offset=2 ref=2.000000
+blockbeg off=0
+local k type=unsigned long sclass=register scope=LOCAL flags=0 offset=0 ref=241.000000
+local n type=unsigned long sclass=register scope=LOCAL flags=0 offset=2 ref=201.000000
+local r type=unsigned long sclass=register scope=LOCAL flags=0 offset=4 ref=125.000000
+local flag type=unsigned long sclass=register scope=LOCAL flags=0 offset=6 ref=16.000000
+local bptr type=pointer to char sclass=register scope=LOCAL flags=0 offset=8 ref=13.000000
+blockbeg off=10
+blockend off=10
+blockbeg off=10
+blockend off=10
+blockbeg off=10
+blockbeg off=10
+blockend off=10
+blockend off=10
+blockend off=10
+;char * itoa(int16_t s, char *buffer){ //convert an integer to printable ascii in a buffer supplied by the caller
+./nstdlib.c:123.36:
+;	uint16_t flag=0;
+./nstdlib.c:125.15:
+ 2. ADDRLP2 flag
+3. CNSTU2 0
+1' ASGNU2 #2 #3 2 1
+;	char * bptr; bptr=buffer;
+./nstdlib.c:126.14:
+ 2. ADDRLP2 bptr
+4. ADDRFP2 buffer
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;	if (s<0){
+./nstdlib.c:127.5:
+ 3. ADDRFP2 s
+2. INDIRI2 #3
+4. CNSTI2 0
+1' GEI2 #2 #4 55
+./nstdlib.c:127.9:
+;		*bptr='-';bptr++;
+./nstdlib.c:128.2:
+ 3. ADDRLP2 bptr
+2. INDIRP2 #3
+4. CNSTI1 45
+1' ASGNI1 #2 #4 1 1
+./nstdlib.c:128.12:
+ 2. ADDRLP2 count=2 bptr
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;		n=-s;
+./nstdlib.c:129.2:
+ 2. ADDRLP2 n
+6. ADDRFP2 s
+5. INDIRI2 #6
+4. NEGI2 #5
+3. CVIU2 #4 2
+1' ASGNU2 #2 #3 2 1
+;	} else{
+./nstdlib.c:130.1:
+ 2. ADDRGP2 56
+1' JUMPV #2
+ 55:
+./nstdlib.c:130.7:
+;		n=s;
+./nstdlib.c:131.2:
+ 2. ADDRLP2 n
+5. ADDRFP2 s
+4. INDIRI2 #5
+3. CVIU2 #4 2
+1' ASGNU2 #2 #3 2 1
+;	}
+./nstdlib.c:132.1:
+ 56:
+;	k=10000;
+./nstdlib.c:133.1:
+ 2. ADDRLP2 k
+3. CNSTU2 10000
+1' ASGNU2 #2 #3 2 1
+ 2. ADDRGP2 58
+1' JUMPV #2
+ 57:
+;	while(k>0){
+./nstdlib.c:134.11:
+;		for(r=0;k<=n;r++,n-=k); // was r=n/k
+./nstdlib.c:135.6:
+ 2. ADDRLP2 r
+3. CNSTU2 0
+1' ASGNU2 #2 #3 2 1
+ 2. ADDRGP2 63
+1' JUMPV #2
+ 60:
+./nstdlib.c:135.24:
+ 61:
+./nstdlib.c:135.15:
+ 2. ADDRLP2 count=2 r
+4. INDIRU2 #2
+5. CNSTU2 1
+3. ADDU2 #4 #5
+1' ASGNU2 #2 #3 2 1
+7. ADDRLP2 count=2 n
+9. INDIRU2 #7
+11. ADDRLP2 k
+10. INDIRU2 #11
+8. SUBU2 #9 #10
+6' ASGNU2 #7 #8 2 1
+ 63:
+./nstdlib.c:135.10:
+ 3. ADDRLP2 k
+2. INDIRU2 #3
+5. ADDRLP2 n
+4. INDIRU2 #5
+1' LEU2 #2 #4 60
+;		if (flag || r>0||k==1){
+./nstdlib.c:136.6:
+ 3. ADDRLP2 flag
+2. INDIRU2 #3
+4. CNSTU2 count=2 0
+1' NEU2 #2 #4 67
+7. ADDRLP2 r
+6. INDIRU2 #7
+5' NEU2 #6 #4 67
+10. ADDRLP2 k
+9. INDIRU2 #10
+11. CNSTU2 1
+8' NEU2 #9 #11 64
+67:
+./nstdlib.c:136.24:
+;			*bptr=('0'+r);bptr++;
+./nstdlib.c:137.3:
+ 3. ADDRLP2 bptr
+2. INDIRP2 #3
+7. ADDRLP2 r
+6. INDIRU2 #7
+8. CNSTU2 48
+5. ADDU2 #6 #8
+4. CVUI1 #5 2
+1' ASGNI1 #2 #4 1 1
+./nstdlib.c:137.17:
+ 2. ADDRLP2 count=2 bptr
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;			flag='y';
+./nstdlib.c:138.3:
+ 2. ADDRLP2 flag
+3. CNSTU2 121
+1' ASGNU2 #2 #3 2 1
+;		}
+./nstdlib.c:139.2:
+ 64:
+;		k=k/10;
+./nstdlib.c:141.2:
+ 2. ADDRLP2 count=2 k
+4. INDIRU2 #2
+5. CNSTU2 10
+3. DIVU2 #4 #5
+1' ASGNU2 #2 #3 2 1
+;	}
+./nstdlib.c:142.1:
+ 58:
+;	while(k>0){
+./nstdlib.c:134.7:
+ 3. ADDRLP2 k
+2. INDIRU2 #3
+4. CNSTU2 0
+1' NEU2 #2 #4 57
+;	*bptr='\0';
+./nstdlib.c:144.1:
+ 3. ADDRLP2 bptr
+2. INDIRP2 #3
+4. CNSTI1 0
+1' ASGNI1 #2 #4 1 1
+;	return buffer;
+./nstdlib.c:145.8:
+ 3. ADDRFP2 buffer
+2. INDIRP2 #3
+1' RETP2 #2
+ 54:
+maxoff=10
+export ltoa
+function ltoa type=pointer to char function(long long int,pointer to char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=2
+caller s type=long long int sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller buffer type=pointer to char sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+callee s type=long long int sclass=register scope=PARAM flags=0 offset=0 ref=3.000000
+callee buffer type=pointer to char sclass=auto scope=PARAM flags=0 offset=4 ref=2.000000
+blockbeg off=0
+local bptr type=pointer to char sclass=register scope=LOCAL flags=0 offset=0 ref=3.500000
+blockbeg off=2
+blockend off=2
+blockend off=2
+ 2. ADDRFP2 s
+4. ADDRFP2 s
+3. INDIRI4 #4
+1' ASGNI4 #2 #3 4 1
+;char * ltoa(int32_t s, char *buffer){ //convert a long integer to printable ascii in a buffer supplied by the caller
+./nstdlib.c:147.36:
+;	char* bptr=buffer;
+./nstdlib.c:148.12:
+ 2. ADDRLP2 bptr
+4. ADDRFP2 buffer
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;	if (s<0){
+./nstdlib.c:149.5:
+ 3. ADDRFP2 s
+2. INDIRI4 #3
+4. CNSTI4 0
+1' GEI4 #2 #4 69
+./nstdlib.c:149.9:
+;		*bptr++='-';
+./nstdlib.c:150.2:
+ 2. ADDRLP2 count=2 bptr
+1' INDIRP2 count=2 #2
+5. CNSTI2 1
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. CNSTI1 45
+6' ASGNI1 #1 #7 1 1
+;		s=-s;
+./nstdlib.c:151.2:
+ 2. ADDRFP2 count=2 s
+4. INDIRI4 #2
+3. NEGI4 #4
+1' ASGNI4 #2 #3 4 1
+;	}
+./nstdlib.c:152.1:
+ 69:
+;	strcpy(bptr,dubdabx(s,bptr,1)); //uses assembler double-dabble routine
+./nstdlib.c:153.1:
+ 3. ADDRFP2 s
+2. INDIRI4 #3
+1' ARGI4 #2 4 1
+6. ADDRLP2 bptr
+5. INDIRP2 #6
+4' ARGP2 #5 2 1
+8. CNSTI2 1
+7' ARGI2 #8 2 1
+10. ADDRGP2 dubdabx
+9' CALLP2 #10 {pointer to char function(long long int,pointer to char,long int)}
+13. ADDRLP2 bptr
+12. INDIRP2 #13
+11' ARGP2 #12 2 1
+14' ARGP2 #9 2 1
+16. ADDRGP2 strcpy
+15' CALLP2 #16 {pointer to char function(pointer to char,pointer to const char)}
+;	return buffer;
+./nstdlib.c:154.8:
+ 3. ADDRFP2 buffer
+2. INDIRP2 #3
+1' RETP2 #2
+ 68:
+maxoff=2
+export printint
+function printint type=void function(long int) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=2
+caller s type=long int sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee s type=long int sclass=auto scope=PARAM flags=0 offset=0 ref=1.000000
+blockbeg off=0
+local buffer type=array 8 of char sclass=auto scope=LOCAL flags=addressed offset=0 ref=2.000000
+blockend off=8
+;void printint(int16_t s){ //print an integer
+./nstdlib.c:156.24:
+;	itoa(s,buffer);
+./nstdlib.c:158.1:
+ 3. ADDRFP2 s
+2. INDIRI2 #3
+1' ARGI2 #2 2 1
+5. ADDRLP2 buffer
+4' ARGP2 #5 2 1
+7. ADDRGP2 itoa
+6' CALLP2 #7 {pointer to char function(long int,pointer to char)}
+;	printstr(buffer);
+./nstdlib.c:159.1:
+ 2. ADDRLP2 buffer
+1' ARGP2 #2 2 1
+4. ADDRGP2 printstr
+3' CALLV #4 {void function(pointer to char)}
+;}
+./nstdlib.c:160.0:
+ 71:
+maxoff=8
+export printlint
+function printlint type=void function(long long int) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=2
+caller s type=long long int sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee s type=long long int sclass=auto scope=PARAM flags=0 offset=0 ref=1.000000
+blockbeg off=0
+local buffer type=array 12 of char sclass=auto scope=LOCAL flags=addressed offset=0 ref=1.000000
+blockend off=12
+;void printlint(int32_t s){ //print a long integer
+./nstdlib.c:161.25:
+;	printstr(ltoa(s,buffer));
+./nstdlib.c:163.1:
+ 3. ADDRFP2 s
+2. INDIRI4 #3
+1' ARGI4 #2 4 1
+5. ADDRLP2 buffer
+4' ARGP2 #5 2 1
+7. ADDRGP2 ltoa
+6' CALLP2 #7 {pointer to char function(long long int,pointer to char)}
+8' ARGP2 #6 2 1
+10. ADDRGP2 printstr
+9' CALLV #10 {void function(pointer to char)}
+;}
+./nstdlib.c:164.0:
+ 72:
+maxoff=12
+export printflt
+function printflt type=void function(float) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=2
+caller s type=float sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee s type=float sclass=auto scope=PARAM flags=0 offset=0 ref=1.000000
+blockbeg off=0
+local buffer type=array 20 of char sclass=auto scope=LOCAL flags=addressed offset=0 ref=1.000000
+blockend off=20
+;void printflt(float s){ //print a float
+./nstdlib.c:166.22:
+;	printstr(ftoa(s,buffer,3));
+./nstdlib.c:168.1:
+ 3. ADDRFP2 s
+2. INDIRF4 #3
+1' ARGF4 #2 4 1
+5. ADDRLP2 buffer
+4' ARGP2 #5 2 1
+7. CNSTU2 3
+6' ARGU2 #7 2 1
+9. ADDRGP2 ftoa
+8' CALLP2 #9 {pointer to char function(float,pointer to char,unsigned long)}
+10' ARGP2 #8 2 1
+12. ADDRGP2 printstr
+11' CALLV #12 {void function(pointer to char)}
+;}
+./nstdlib.c:169.0:
+ 73:
+maxoff=20
+export putxn
+function putxn type=void function(unsigned char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=2
+caller x type=unsigned char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee x type=unsigned char sclass=auto scope=PARAM flags=0 offset=0 ref=2.000000
+blockbeg off=0
+blockbeg off=0
+blockend off=0
+blockbeg off=0
+blockend off=0
+blockend off=0
+;void putxn(unsigned char x){ //print a nibble as ascii hex
+./nstdlib.c:171.27:
+;	if (x<10){
+./nstdlib.c:172.5:
+ 4. ADDRFP2 x
+3. INDIRU1 #4
+2. CVUI1 #3 1
+5. CNSTI1 10
+1' GEI1 #2 #5 75
+./nstdlib.c:172.10:
+;		putc(x+'0');
+./nstdlib.c:173.1:
+ 2. CNSTI1 7
+1' ARGI1 #2 1 1
+7. ADDRFP2 x
+6. INDIRU1 #7
+5. CVUI1 #6 1
+8. CNSTI1 48
+4. ADDI1 #5 #8
+3' ARGI1 #4 1 1
+10. ADDRGP2 out
+9' CALLI1 #10 {int function}
+;	} else {
+./nstdlib.c:174.1:
+ 2. ADDRGP2 76
+1' JUMPV #2
+ 75:
+./nstdlib.c:174.8:
+;		putc(x+'A'-10);
+./nstdlib.c:175.1:
+ 2. CNSTI1 7
+1' ARGI1 #2 1 1
+8. ADDRFP2 x
+7. INDIRU1 #8
+6. CVUI1 #7 1
+9. CNSTI1 65
+5. ADDI1 #6 #9
+10. CNSTI1 10
+4. SUBI1 #5 #10
+3' ARGI1 #4 1 1
+12. ADDRGP2 out
+11' CALLI1 #12 {int function}
+;	}
+./nstdlib.c:176.1:
+ 76:
+;}
+./nstdlib.c:177.0:
+ 74:
+maxoff=0
+export putx
+function putx type=void function(unsigned char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=2
+caller x type=unsigned char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee x type=unsigned char sclass=auto scope=PARAM flags=0 offset=0 ref=2.000000
+blockbeg off=0
+blockend off=0
+;void putx(unsigned char x){ //print a unsigned char as ascii hex
+./nstdlib.c:178.26:
+;	putxn(x>>4);
+./nstdlib.c:179.1:
+ 4. ADDRFP2 x
+3. INDIRU1 #4
+5. CNSTI1 4
+2. RSHU1 #3 #5
+1' ARGU1 #2 1 1
+7. ADDRGP2 putxn
+6' CALLV #7 {void function(unsigned char)}
+;	putxn(x & 0x0F);
+./nstdlib.c:180.1:
+ 6. ADDRFP2 x
+5. INDIRU1 #6
+4. CVUI1 #5 1
+7. CNSTI1 15
+3. BANDI1 #4 #7
+2. CVIU1 #3 1
+1' ARGU1 #2 1 1
+9. ADDRGP2 putxn
+8' CALLV #9 {void function(unsigned char)}
+;}
+./nstdlib.c:181.0:
+ 77:
+maxoff=0
+export printf
+function printf type=void function(pointer to char,...) sclass=auto scope=GLOBAL flags=0 ref=5.000000 ncalls=15
+caller pptr type=pointer to char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee pptr type=pointer to char sclass=auto scope=PARAM flags=addressed offset=0 ref=2.000000
+blockbeg off=0
+local ptr type=pointer to char sclass=register scope=LOCAL flags=0 offset=0 ref=43.000000
+local c type=unsigned char sclass=register scope=LOCAL flags=0 offset=2 ref=39.000000
+local this type=pointer to long int sclass=register scope=LOCAL flags=0 offset=3 ref=6.000000
+local argslot type=long int sclass=register scope=LOCAL flags=0 offset=5 ref=5.250000
+local xord type=unsigned char sclass=auto scope=LOCAL flags=0 offset=7 ref=0.500000
+blockbeg off=8
+blockbeg off=8
+blockend off=8
+blockbeg off=8
+blockbeg off=8
+blockbeg off=8
+blockend off=8
+blockbeg off=8
+blockend off=8
+blockbeg off=8
+blockbeg off=8
+blockend off=8
+blockbeg off=8
+blockend off=8
+blockbeg off=8
+blockend off=8
+blockend off=8
+blockbeg off=8
+blockbeg off=8
+blockend off=8
+blockend off=8
+blockend off=8
+blockend off=8
+blockend off=8
+blockend off=8
+;void printf(char *pptr,...){ //limited implementation of printf
+./nstdlib.c:182.27:
+;	register char* ptr=pptr; //try to save on loads/spills
+./nstdlib.c:185.20:
+ 2. ADDRLP2 ptr
+4. ADDRFP2 pptr
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;	int16_t argslot=0;	//used to align longs
+./nstdlib.c:186.17:
+ 2. ADDRLP2 argslot
+3. CNSTI2 0
+1' ASGNI2 #2 #3 2 1
+;	int16_t * this=(int16_t *)&pptr;
+./nstdlib.c:187.16:
+ 2. ADDRLP2 this
+3. ADDRFP2 pptr
+1' ASGNP2 #2 #3 2 1
+;	this++; argslot++; //advance argument pointer and slot #
+./nstdlib.c:188.1:
+ 2. ADDRLP2 count=2 this
+4. INDIRP2 #2
+5. CNSTI2 2
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+./nstdlib.c:188.9:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 1
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+ 2. ADDRGP2 80
+1' JUMPV #2
+ 79:
+;    while(*ptr) {
+./nstdlib.c:189.16:
+;		c=*ptr; ptr++;
+./nstdlib.c:190.2:
+ 2. ADDRLP2 c
+6. ADDRLP2 ptr
+5. INDIRP2 #6
+4. INDIRI1 #5
+3. CVIU1 #4 1
+1' ASGNU1 #2 #3 1 1
+./nstdlib.c:190.10:
+ 2. ADDRLP2 count=2 ptr
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;		if (c!='%'){
+./nstdlib.c:191.6:
+ 4. ADDRLP2 c
+3. INDIRU1 #4
+2. CVUI1 #3 1
+5. CNSTI1 37
+1' EQI1 #2 #5 82
+./nstdlib.c:191.13:
+;			putc(c);
+./nstdlib.c:192.1:
+ 2. CNSTI1 7
+1' ARGI1 #2 1 1
+5. ADDRLP2 c
+4. INDIRU1 #5
+3' ARGU1 #4 1 1
+7. ADDRGP2 out
+6' CALLI1 #7 {int function}
+;			asm(" nop1806\n nop1806\n nop1806\n"); //17-03-13
+./nstdlib.c:193.0:
+;		} else{
+./nstdlib.c:194.2:
+ 2. ADDRGP2 83
+1' JUMPV #2
+ 82:
+./nstdlib.c:194.8:
+;			c=*ptr;ptr++;
+./nstdlib.c:195.3:
+ 2. ADDRLP2 c
+6. ADDRLP2 ptr
+5. INDIRP2 #6
+4. INDIRI1 #5
+3. CVIU1 #4 1
+1' ASGNU1 #2 #3 1 1
+./nstdlib.c:195.10:
+ 2. ADDRLP2 count=2 ptr
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;			switch (c){
+./nstdlib.c:196.11:
+ 4. ADDRLP2 c
+3. INDIRU1 #4
+2. CVUI1 count=3 #3 1
+5. CNSTI1 count=2 99
+1' LTI1 #2 #5 104
+7. CNSTI1 108
+6' GTI1 #2 #7 105
+13. SUBI1 #2 #5
+12. CVIU2 #13 1
+14. CNSTI1 1
+11. LSHU2 #12 #14
+15. ADDRGP2 106
+10. ADDP2 #11 #15
+9. INDIRP2 #10
+8' JUMPV #9
+segment lit
+global 106 type=array 5 of pointer to void sclass=static scope=GLOBAL flags=generated ref=0.500000
+defaddress 88
+defaddress 86
+defaddress 84
+defaddress 99
+defaddress 84
+defaddress 84
+defaddress 86
+defaddress 84
+defaddress 84
+defaddress 92
+segment text
+ 104:
+ 4. ADDRLP2 c
+3. INDIRU1 #4
+2. CVUI1 #3 1
+5. CNSTI1 88
+1' EQI1 #2 #5 91
+ 2. ADDRGP2 84
+1' JUMPV #2
+ 105:
+ 4. ADDRLP2 c
+3. INDIRU1 #4
+2. CVUI1 count=2 #3 1
+5. CNSTI1 count=2 115
+1' EQI1 #2 #5 87
+6' LTI1 #2 #5 84
+ 107:
+ 4. ADDRLP2 c
+3. INDIRU1 #4
+2. CVUI1 #3 1
+5. CNSTI1 120
+1' EQI1 #2 #5 91
+ 2. ADDRGP2 84
+1' JUMPV #2
+./nstdlib.c:196.13:
+ 86:
+;					printint(*this++);
+./nstdlib.c:198.5:
+ 2. ADDRLP2 count=2 this
+1' INDIRP2 count=2 #2
+5. CNSTI2 2
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. INDIRI2 #1
+6' ARGI2 #7 2 1
+9. ADDRGP2 printint
+8' CALLV #9 {void function(long int)}
+;					argslot+=1; //next argument slot
+./nstdlib.c:199.5:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 1
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;					break;
+./nstdlib.c:200.5:
+ 2. ADDRGP2 85
+1' JUMPV #2
+ 87:
+;					printstr((char*) *this++);
+./nstdlib.c:202.5:
+ 2. ADDRLP2 count=2 this
+1' INDIRP2 count=2 #2
+5. CNSTI2 2
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+9. INDIRI2 #1
+8. CVIU2 #9 2
+7. CVUP2 #8 2
+6' ARGP2 #7 2 1
+11. ADDRGP2 printstr
+10' CALLV #11 {void function(pointer to char)}
+;					argslot+=1; //next argument slot
+./nstdlib.c:203.5:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 1
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;					break;
+./nstdlib.c:204.5:
+ 2. ADDRGP2 85
+1' JUMPV #2
+ 88:
+;					if (*ptr=='x'){ //if there's an x
+./nstdlib.c:206.9:
+ 4. ADDRLP2 ptr
+3. INDIRP2 #4
+2. INDIRI1 #3
+5. CNSTI1 120
+1' NEI1 #2 #5 89
+./nstdlib.c:206.19:
+;						ptr++; //skip over the x
+./nstdlib.c:207.6:
+ 2. ADDRLP2 count=2 ptr
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;						putx(((uint16_t) *this++)&255); //print 1 byte as hex
+./nstdlib.c:208.6:
+ 2. ADDRLP2 count=2 this
+1' INDIRP2 count=2 #2
+5. CNSTI2 2
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+10. INDIRI2 #1
+9. CVIU2 #10 2
+11. CNSTU2 255
+8. BANDU2 #9 #11
+7. CVUU1 #8 2
+6' ARGU1 #7 1 1
+13. ADDRGP2 putx
+12' CALLV #13 {void function(unsigned char)}
+;					} else{
+./nstdlib.c:209.5:
+ 2. ADDRGP2 90
+1' JUMPV #2
+ 89:
+./nstdlib.c:209.11:
+;						putc((uint16_t) *this++);		//print as char
+./nstdlib.c:210.1:
+ 2. CNSTI1 7
+1' ARGI1 #2 1 1
+4. ADDRLP2 count=2 this
+3' INDIRP2 count=2 #4
+7. CNSTI2 2
+6. ADDP2 #3 #7
+5' ASGNP2 #4 #6 2 1
+10. INDIRI2 #3
+9. CVIU2 #10 2
+8' ARGU2 #9 2 1
+12. ADDRGP2 out
+11' CALLI1 #12 {int function}
+;					}
+./nstdlib.c:211.5:
+ 90:
+;					argslot+=1; //next argument slot
+./nstdlib.c:212.5:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 1
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;					break;
+./nstdlib.c:213.5:
+ 2. ADDRGP2 85
+1' JUMPV #2
+ 91:
+;					putx(((uint16_t) *this)>>8);
+./nstdlib.c:215.5:
+ 7. ADDRLP2 this
+6. INDIRP2 #7
+5. INDIRI2 #6
+4. CVIU2 #5 2
+8. CNSTI1 8
+3. RSHU2 #4 #8
+2. CVUU1 #3 2
+1' ARGU1 #2 1 1
+10. ADDRGP2 putx
+9' CALLV #10 {void function(unsigned char)}
+;					putx(((uint16_t) *this++)&255);
+./nstdlib.c:216.5:
+ 2. ADDRLP2 count=2 this
+1' INDIRP2 count=2 #2
+5. CNSTI2 2
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+10. INDIRI2 #1
+9. CVIU2 #10 2
+11. CNSTU2 255
+8. BANDU2 #9 #11
+7. CVUU1 #8 2
+6' ARGU1 #7 1 1
+13. ADDRGP2 putx
+12' CALLV #13 {void function(unsigned char)}
+;					argslot+=1; //next argument slot
+./nstdlib.c:217.5:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 1
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;					break;
+./nstdlib.c:218.5:
+ 2. ADDRGP2 85
+1' JUMPV #2
+ 92:
+;					if (*ptr){ //as long as there's something there
+./nstdlib.c:220.9:
+ 4. ADDRLP2 ptr
+3. INDIRP2 #4
+2. INDIRI1 #3
+5. CNSTI1 0
+1' EQI1 #2 #5 93
+./nstdlib.c:220.14:
+;						xord=*ptr++;
+./nstdlib.c:221.6:
+ 2. ADDRLP2 count=2 ptr
+1' INDIRP2 count=2 #2
+5. CNSTI2 1
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. ADDRLP2 xord
+9. INDIRI1 #1
+8. CVIU1 #9 1
+6' ASGNU1 #7 #8 1 1
+;						if (argslot&1) {
+./nstdlib.c:222.10:
+ 4. ADDRLP2 argslot
+3. INDIRI2 #4
+5. CNSTI2 1
+2. BANDI2 #3 #5
+6. CNSTI2 0
+1' EQI2 #2 #6 95
+./nstdlib.c:222.21:
+;							this++;
+./nstdlib.c:223.7:
+ 2. ADDRLP2 count=2 this
+4. INDIRP2 #2
+5. CNSTI2 2
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;							argslot++;
+./nstdlib.c:224.7:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 1
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;						}
+./nstdlib.c:225.6:
+ 95:
+;						if(xord=='d'){
+./nstdlib.c:226.9:
+ 4. ADDRLP2 xord
+3. INDIRU1 #4
+2. CVUI1 #3 1
+5. CNSTI1 100
+1' NEI1 #2 #5 97
+./nstdlib.c:226.19:
+;							printlint(*(int32_t *)this);//treats "this" as a pointer to long
+./nstdlib.c:227.7:
+ 4. ADDRLP2 this
+3. INDIRP2 #4
+2. INDIRI4 #3
+1' ARGI4 #2 4 1
+6. ADDRGP2 printlint
+5' CALLV #6 {void function(long long int)}
+;							this+=2;				// and advances it 4 bytes
+./nstdlib.c:228.7:
+ 2. ADDRLP2 count=2 this
+4. INDIRP2 #2
+5. CNSTI2 4
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;						} else{
+./nstdlib.c:229.6:
+ 2. ADDRGP2 98
+1' JUMPV #2
+ 97:
+./nstdlib.c:229.12:
+;							putx(((uint16_t) *this)>>8);
+./nstdlib.c:230.7:
+ 7. ADDRLP2 this
+6. INDIRP2 #7
+5. INDIRI2 #6
+4. CVIU2 #5 2
+8. CNSTI1 8
+3. RSHU2 #4 #8
+2. CVUU1 #3 2
+1' ARGU1 #2 1 1
+10. ADDRGP2 putx
+9' CALLV #10 {void function(unsigned char)}
+;							putx(((uint16_t) *this++)&255);
+./nstdlib.c:231.7:
+ 2. ADDRLP2 count=2 this
+1' INDIRP2 count=2 #2
+5. CNSTI2 2
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+10. INDIRI2 #1
+9. CVIU2 #10 2
+11. CNSTU2 255
+8. BANDU2 #9 #11
+7. CVUU1 #8 2
+6' ARGU1 #7 1 1
+13. ADDRGP2 putx
+12' CALLV #13 {void function(unsigned char)}
+;							putx(((uint16_t) *this)>>8);
+./nstdlib.c:232.7:
+ 7. ADDRLP2 this
+6. INDIRP2 #7
+5. INDIRI2 #6
+4. CVIU2 #5 2
+8. CNSTI1 8
+3. RSHU2 #4 #8
+2. CVUU1 #3 2
+1' ARGU1 #2 1 1
+10. ADDRGP2 putx
+9' CALLV #10 {void function(unsigned char)}
+;							putx(((uint16_t) *this++)&255);
+./nstdlib.c:233.7:
+ 2. ADDRLP2 count=2 this
+1' INDIRP2 count=2 #2
+5. CNSTI2 2
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+10. INDIRI2 #1
+9. CVIU2 #10 2
+11. CNSTU2 255
+8. BANDU2 #9 #11
+7. CVUU1 #8 2
+6' ARGU1 #7 1 1
+13. ADDRGP2 putx
+12' CALLV #13 {void function(unsigned char)}
+;						}
+./nstdlib.c:234.6:
+ 98:
+;						argslot+=2;
+./nstdlib.c:235.6:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 2
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;						break;
+./nstdlib.c:236.6:
+ 2. ADDRGP2 85
+1' JUMPV #2
+ 93:
+ 99:
+;					if (*ptr){ //as long as there's something there
+./nstdlib.c:240.9:
+ 4. ADDRLP2 ptr
+3. INDIRP2 #4
+2. INDIRI1 #3
+5. CNSTI1 0
+1' EQI1 #2 #5 100
+./nstdlib.c:240.14:
+;						if (argslot&1) { //adjust alignment
+./nstdlib.c:241.10:
+ 4. ADDRLP2 argslot
+3. INDIRI2 #4
+5. CNSTI2 1
+2. BANDI2 #3 #5
+6. CNSTI2 0
+1' EQI2 #2 #6 102
+./nstdlib.c:241.21:
+;							this++;
+./nstdlib.c:242.7:
+ 2. ADDRLP2 count=2 this
+4. INDIRP2 #2
+5. CNSTI2 2
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;							argslot++;
+./nstdlib.c:243.7:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 1
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;						}
+./nstdlib.c:244.6:
+ 102:
+;						printflt(*(float *)this);//treats "this" as a pointer to float
+./nstdlib.c:245.6:
+ 4. ADDRLP2 this
+3. INDIRP2 #4
+2. INDIRF4 #3
+1' ARGF4 #2 4 1
+6. ADDRGP2 printflt
+5' CALLV #6 {void function(float)}
+;						this+=2;				// and advances it 4 bytes
+./nstdlib.c:246.6:
+ 2. ADDRLP2 count=2 this
+4. INDIRP2 #2
+5. CNSTI2 4
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;						argslot+=2;
+./nstdlib.c:247.6:
+ 2. ADDRLP2 count=2 argslot
+4. INDIRI2 #2
+5. CNSTI2 2
+3. ADDI2 #4 #5
+1' ASGNI2 #2 #3 2 1
+;						break;
+./nstdlib.c:248.6:
+ 2. ADDRGP2 85
+1' JUMPV #2
+ 100:
+ 84:
+;					putc('%');putc(c);
+./nstdlib.c:252.1:
+ 2. CNSTI1 7
+1' ARGI1 #2 1 1
+4. CNSTI1 37
+3' ARGI1 #4 1 1
+6. ADDRGP2 out
+5' CALLI1 #6 {int function}
+./nstdlib.c:252.12:
+ 2. CNSTI1 7
+1' ARGI1 #2 1 1
+5. ADDRLP2 c
+4. INDIRU1 #5
+3' ARGU1 #4 1 1
+7. ADDRGP2 out
+6' CALLI1 #7 {int function}
+;			} //switch
+./nstdlib.c:253.3:
+ 85:
+;		} //%
+./nstdlib.c:254.2:
+ 83:
+;	} //while
+./nstdlib.c:255.1:
+ 80:
+;    while(*ptr) {
+./nstdlib.c:189.10:
+ 4. ADDRLP2 ptr
+3. INDIRP2 #4
+2. INDIRI1 #3
+5. CNSTI1 0
+1' NEI1 #2 #5 79
+;} //prtf
+./nstdlib.c:256.0:
+ 78:
+maxoff=8
+export exit
+function exit type=void function(long int) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=1
+caller code type=long int sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee code type=long int sclass=auto scope=PARAM flags=0 offset=0 ref=1.000000
+blockbeg off=0
+blockend off=0
+;void exit(int16_t code){
+./nstdlib.c:257.23:
+;	printf("exit %d\n",code);
+./nstdlib.c:258.1:
+ 2. ADDRGP2 109
+1' ARGP2 #2 2 1
+5. ADDRFP2 code
+4. INDIRI2 #5
+3' ARGI2 #4 2 1
+7. ADDRGP2 printf
+6' CALLV #7 {void function(pointer to char,...)}
+ 110:
+;	while(1);
+./nstdlib.c:259.9:
+ 111:
+./nstdlib.c:259.7:
+ 2. ADDRGP2 110
+1' JUMPV #2
+;}
+./nstdlib.c:260.0:
+ 108:
+maxoff=0
+export memcmp
+function memcmp type=long int function(pointer to const void,pointer to const void,unsigned long) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller Ptr1 type=pointer to const void sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller Ptr2 type=pointer to const void sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+caller Count type=unsigned long sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+callee Ptr1 type=pointer to const void sclass=auto scope=PARAM flags=0 offset=0 ref=1.000000
+callee Ptr2 type=pointer to const void sclass=auto scope=PARAM flags=0 offset=2 ref=1.000000
+callee Count type=unsigned long sclass=register scope=PARAM flags=0 offset=4 ref=10.000000
+blockbeg off=0
+local v type=long int sclass=register scope=LOCAL flags=0 offset=0 ref=22.000000
+local p1 type=pointer to unsigned char sclass=register scope=LOCAL flags=0 offset=2 ref=11.000000
+local p2 type=pointer to unsigned char sclass=register scope=LOCAL flags=0 offset=4 ref=11.000000
+blockbeg off=6
+blockend off=6
+blockend off=6
+ 2. ADDRFP2 Count
+4. ADDRFP2 Count
+3. INDIRU2 #4
+1' ASGNU2 #2 #3 2 1
+;int16_t memcmp(const void *Ptr1, const void *Ptr2, uint16_t Count){
+./nstdlib.c:261.66:
+;    int16_t v = 0;
+./nstdlib.c:263.16:
+ 2. ADDRLP2 v
+3. CNSTI2 0
+1' ASGNI2 #2 #3 2 1
+;    p1 = (unsigned char *)Ptr1;
+./nstdlib.c:264.4:
+ 2. ADDRLP2 p1
+4. ADDRFP2 Ptr1
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;    p2 = (unsigned char *)Ptr2;
+./nstdlib.c:265.4:
+ 2. ADDRLP2 p2
+4. ADDRFP2 Ptr2
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+ 2. ADDRGP2 115
+1' JUMPV #2
+ 114:
+;    while(Count-- > 0 && v == 0) {
+./nstdlib.c:267.33:
+;        v = *(p1++) - *(p2++);
+./nstdlib.c:268.8:
+ 2. ADDRLP2 count=2 p1
+1' INDIRP2 count=2 #2
+5. CNSTI2 count=2 1
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. ADDRLP2 count=2 p2
+6' INDIRP2 count=2 #7
+9. ADDP2 #6 #5
+8' ASGNP2 #7 #9 2 1
+11. ADDRLP2 v
+15. INDIRU1 #1
+14. CVUI1 #15 1
+17. INDIRU1 #6
+16. CVUI1 #17 1
+13. SUBI1 #14 #16
+12. CVII2 #13 1
+10' ASGNI2 #11 #12 2 1
+;    }
+./nstdlib.c:269.4:
+ 115:
+;    while(Count-- > 0 && v == 0) {
+./nstdlib.c:267.10:
+ 2. ADDRFP2 count=2 Count
+1' INDIRU2 count=2 #2
+5. CNSTU2 1
+4. SUBU2 #1 #5
+3' ASGNU2 #2 #4 2 1
+7. CNSTU2 0
+6' EQU2 #1 #7 117
+10. ADDRLP2 v
+9. INDIRI2 #10
+11. CNSTI2 0
+8' EQI2 #9 #11 114
+117:
+;    return v;
+./nstdlib.c:271.11:
+ 3. ADDRLP2 v
+2. INDIRI2 #3
+1' RETI2 #2
+ 113:
+maxoff=6
+export memcpy
+function memcpy type=pointer to void function(pointer to void,pointer to const void,unsigned long) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller dest type=pointer to void sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller src type=pointer to const void sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+caller count type=unsigned long sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+callee dest type=pointer to void sclass=auto scope=PARAM flags=0 offset=0 ref=2.000000
+callee src type=pointer to const void sclass=auto scope=PARAM flags=0 offset=2 ref=1.000000
+callee count type=unsigned long sclass=register scope=PARAM flags=0 offset=4 ref=10.000000
+blockbeg off=0
+local dst8 type=pointer to char sclass=register scope=LOCAL flags=0 offset=0 ref=11.000000
+local src8 type=pointer to char sclass=register scope=LOCAL flags=0 offset=2 ref=11.000000
+blockbeg off=4
+blockend off=4
+blockend off=4
+ 2. ADDRFP2 count
+4. ADDRFP2 count
+3. INDIRU2 #4
+1' ASGNU2 #2 #3 2 1
+;void* memcpy(void* dest, const void* src, uint16_t count) {
+./nstdlib.c:273.58:
+;        char* dst8 = (char*)dest;
+./nstdlib.c:274.21:
+ 2. ADDRLP2 dst8
+4. ADDRFP2 dest
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+;        char* src8 = (char*)src;
+./nstdlib.c:275.21:
+ 2. ADDRLP2 src8
+4. ADDRFP2 src
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+ 2. ADDRGP2 120
+1' JUMPV #2
+ 119:
+;        while (count--) {
+./nstdlib.c:277.24:
+;            *dst8++ = *src8++;
+./nstdlib.c:278.12:
+ 2. ADDRLP2 count=2 dst8
+1' INDIRP2 count=2 #2
+5. CNSTI2 count=2 1
+4. ADDP2 #1 #5
+3' ASGNP2 #2 #4 2 1
+7. ADDRLP2 count=2 src8
+6' INDIRP2 count=2 #7
+9. ADDP2 #6 #5
+8' ASGNP2 #7 #9 2 1
+11. INDIRI1 #6
+10' ASGNI1 #1 #11 1 1
+;        }
+./nstdlib.c:279.8:
+ 120:
+;        while (count--) {
+./nstdlib.c:277.15:
+ 2. ADDRFP2 count=2 count
+1' INDIRU2 count=2 #2
+5. CNSTU2 1
+4. SUBU2 #1 #5
+3' ASGNU2 #2 #4 2 1
+7. CNSTU2 0
+6' NEU2 #1 #7 119
+;        return dest;
+./nstdlib.c:280.15:
+ 3. ADDRFP2 dest
+2. INDIRP2 #3
+1' RETP2 #2
+ 118:
+maxoff=4
+export memset
+function memset type=pointer to void function(pointer to void,long int,unsigned long) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller s type=pointer to void sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller c type=long int sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+caller n type=unsigned long sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+callee s type=pointer to void sclass=auto scope=PARAM flags=0 offset=0 ref=2.000000
+callee c type=long int sclass=register scope=PARAM flags=0 offset=2 ref=10.000000
+callee n type=unsigned long sclass=register scope=PARAM flags=0 offset=4 ref=20.000000
+blockbeg off=0
+local p type=pointer to unsigned char sclass=register scope=LOCAL flags=0 offset=0 ref=21.000000
+blockbeg off=2
+blockend off=2
+blockend off=2
+ 2. ADDRFP2 c
+4. ADDRFP2 c
+3. INDIRI2 #4
+1' ASGNI2 #2 #3 2 1
+ 2. ADDRFP2 n
+4. ADDRFP2 n
+3. INDIRU2 #4
+1' ASGNU2 #2 #3 2 1
+;{
+./nstdlib.c:284.0:
+;    unsigned char* p=s;
+./nstdlib.c:285.21:
+ 2. ADDRLP2 p
+4. ADDRFP2 s
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+ 2. ADDRGP2 124
+1' JUMPV #2
+ 123:
+;    while(n){
+./nstdlib.c:286.12:
+;        *p = (unsigned char)c;
+./nstdlib.c:287.8:
+ 3. ADDRLP2 p
+2. INDIRP2 #3
+6. ADDRFP2 c
+5. INDIRI2 #6
+4. CVIU1 #5 2
+1' ASGNU1 #2 #4 1 1
+;        p++;
+./nstdlib.c:288.8:
+ 2. ADDRLP2 count=2 p
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;        n--;
+./nstdlib.c:289.8:
+ 2. ADDRFP2 count=2 n
+4. INDIRU2 #2
+5. CNSTU2 1
+3. SUBU2 #4 #5
+1' ASGNU2 #2 #3 2 1
+;	}
+./nstdlib.c:290.1:
+ 124:
+;    while(n){
+./nstdlib.c:286.10:
+ 3. ADDRFP2 n
+2. INDIRU2 #3
+4. CNSTU2 0
+1' NEU2 #2 #4 123
+;    return s;
+./nstdlib.c:291.11:
+ 3. ADDRFP2 s
+2. INDIRP2 #3
+1' RETP2 #2
+ 122:
+maxoff=2
+export nstdlibincluder
+function nstdlibincluder type=void function(void) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+blockbeg off=0
+blockend off=0
+;void nstdlibincluder(){
+./nstdlib.c:293.22:
+;	asm("\tinclude nstdlib.inc\n"); //strcpy, strcmp
+./nstdlib.c:294.0:
+;}
+./nstdlib.c:295.0:
+ 126:
+maxoff=0
+
+import out
+import comparulator
+import dubdabx
+import putc
+import strcpy
+segment lit
+global 109 type=array 9 of char sclass=static scope=GLOBAL flags=generated ref=1.000000
+defstring "exit %d\012\000"
+global 47 type=double sclass=static scope=GLOBAL flags=generated ref=0.500000
+defconst float.4 -1
+global 46 type=double sclass=static scope=GLOBAL flags=generated ref=1.000000
+defconst float.4 0.0
+global 21 type=array 2 of char sclass=static scope=GLOBAL flags=generated ref=1.000000
+defstring "\012\000"
+global 20 type=array 4 of char sclass=static scope=GLOBAL flags=generated ref=0.500000
+defstring " >=\000"
+global 17 type=array 3 of char sclass=static scope=GLOBAL flags=generated ref=0.500000
+defstring " >\000"
+global 14 type=array 4 of char sclass=static scope=GLOBAL flags=generated ref=0.500000
+defstring " !=\000"
+global 11 type=array 3 of char sclass=static scope=GLOBAL flags=generated ref=0.500000
+defstring " =\000"
+global 8 type=array 4 of char sclass=static scope=GLOBAL flags=generated ref=0.500000
+defstring " <=\000"
+global 5 type=array 3 of char sclass=static scope=GLOBAL flags=generated ref=0.500000
+defstring " <\000"
+global 2 type=array 29 of char sclass=static scope=GLOBAL flags=generated ref=1.000000
+defstring "for %d:%d scomparulator sez \000"
+progend

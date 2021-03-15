@@ -1,0 +1,59 @@
+	ldaD R11,2
+	cpy2 R13,R11 
+	st2 R11,'O',sp,(4+1)
+;D*E*A*D  R11
+
+	ld1 R11,'O',R7,(1)
+	cpy1 R13,R11
+;D*E*A*D  R11
+
+	ldn1 R10,R11	
+	cpy1 R12,R10
+;D*E*A*D  R10
+
+	ldaD R11,_player+2
+	str1I 0,R11
+;D*E*A*D  R11
+
+	cpy2 R11,R7 
+;D*E*A*D  R7
+	cpy1 R15,R11
+;D*E*A*D  R11
+
+L239:
+	ldA2 R11,'O',sp,(11+1)
+	ld1 R10,'O',sp,(11+1)
+	incm R10,1
+	str1 R10,R11
+;D*E*A*D  R10
+;D*E*A*D  R11
+
+	cpy2 R11,R7 
+;D*E*A*D  R7
+	cpy1 R15,R11
+;D*E*A*D  R11
+
+	cpy2 R11,R7 
+;D*E*A*D  R7
+	cpy1 R15,R11
+;D*E*A*D  R11
+
+***********************I think the following would be safely done in 1 inst ld1 R11,
+	ldaD R11,_innerHorizontalWallY
+	ldn1 R11,R11
+	
+	ld1 R11,'D',(_ghostCount),0
+	zExt R11 
+	st2 R11,'O',sp,(6+1)
+;D*E*A*D  R11
+
+	ldaD R11,2
+	cpy2 R13,R11 
+	st2 R11,'O',sp,(4+1)
+;D*E*A*D  R11
+
+	ld1 R11,'D',(_ghostCount),0
+	zExt R11 
+	jnI2I R11,4,lbnf,L978
+;D*E*A*D  R11
+

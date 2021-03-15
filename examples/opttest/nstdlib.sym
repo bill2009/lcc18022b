@@ -1,0 +1,39 @@
+export strncmp
+segment text
+function strncmp type=int function(pointer to const char,pointer to const char,int) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller s1 type=pointer to const char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller s2 type=pointer to const char sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+caller uint16_t type=int sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+callee s1 type=pointer to const char sclass=register scope=PARAM flags=0 offset=0 ref=30.000000
+callee s2 type=pointer to const char sclass=register scope=PARAM flags=0 offset=2 ref=25.000000
+callee uint16_t type=int sclass=auto scope=PARAM flags=0 offset=4 ref=0.000000
+maxoff=0
+export strlen
+function strlen type=int function(pointer to char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+caller str type=pointer to char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee str type=pointer to char sclass=register scope=PARAM flags=0 offset=0 ref=20.000000
+maxoff=0
+export printstr
+function printstr type=void function(pointer to char) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=1
+caller ptr type=pointer to char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+callee ptr type=pointer to char sclass=register scope=PARAM flags=0 offset=0 ref=20.000000
+maxoff=0
+segment lit
+global round_nums type=array 8 of const float sclass=static scope=GLOBAL flags=0 ref=0.000000
+defconst float.4 0.5
+defconst float.4 0.05
+defconst float.4 0.005
+defconst float.4 0.0005
+defconst float.4 5e-05
+defconst float.4 5e-06
+defconst float.4 5e-07
+defconst float.4 5e-08
+global mult_nums type=array 8 of const float sclass=static scope=GLOBAL flags=0 ref=0.000000
+defconst float.4 1
+defconst float.4 10
+defconst float.4 100
+defconst float.4 1000
+defconst float.4 10000
+defconst float.4 65535
+defconst float.4 65535
+defconst float.4 65535

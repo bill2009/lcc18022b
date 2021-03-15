@@ -1,0 +1,148 @@
+#20-10-04 optimizations for liveness decorated files
+	zExt %1 
+	incm %1,%3
+	str1 %1,%2
+;D*E*A*D  %1
+=
+	incm %1,%3
+	str1 %1,%2
+;D*E*A*D  %1
+
+	ld1 %1,%2,%3,%4
+	zExt %1 
+	cpy2 %5,%1 
+;D*E*A*D  %1
+=
+	ld1 %5,%2,%3,%4
+	zExt %5 
+
+	cpy1 %1,%2
+	str1 %1,%3
+;D*E*A*D  %1
+=
+	str1 %2,%3
+
+	zExt %1 
+	cpy1 %2,%1
+;D*E*A*D  %1
+=
+	cpy1 %2,%1
+;D*E*A*D  %1
+
+	cpy2 %1,%2 
+	cpy2 %3,%1 
+;D*E*A*D  %1
+=
+	cpy2 %3,%2 
+
+	cpy1 %1,%2
+	zExt %1 
+	cpy1 %3,%1
+;D*E*A*D  %1
+=
+	cpy1 %3,%2
+
+	cpy2 %1,%2 
+	jzU1 %1,%3
+;D*E*A*D  R11
+=
+	jzU1 %2,%3
+
+	cpy2 %1,%2 
+	jnzU1 %1,%3
+;D*E*A*D  R11
+=
+	jnzU1 %2,%3
+
+	zExt %1 
+	decm %1,%3
+	str1 %1,%2
+;D*E*A*D  %1
+=
+	decm %1,%3
+	str1 %1,%2
+;D*E*A*D  %1
+
+	ldaD %1,%2
+	st2 %1,%3,%4,%5
+;D*E*A*D  %1
+=
+	st2i %2,%3,%4,%5
+
+	cpy2 %1,%2 
+	ldA2 %3,'O',%1,%5
+;D*E*A*D  %1
+=
+	ldA2 %3,'O',%2,%5
+
+	ld2z %1
+	st2 %1,%2,%3,%4
+;D*E*A*D  %1
+=
+	st2i 0,%2,%3,%4
+
+	cpy2 %1,%2 
+	ldA2 %3,%4,%1,%5
+;D*E*A*D  %1
+=
+	ldA2 %3,%4,%2,%5
+
+	cpy2 %1,%2 
+	incm %1,%4
+	cpy1 %3,%1
+;D*E*A*D  %1
+=
+	cpy1 %3,%2
+	incm %3,%4
+
+	cpy2 %1,%2
+;D*E*A*D  %2
+	incm %1,%3
+	str1I 0,%1
+;D*E*A*D  %1
+=
+	incm %2,%3
+	str1I 0,%2
+;D*E*A*D  %2
+
+	ldn1 %1,%2
+	jzU1 %1,%3
+;D*E*A*D  %1
+=
+	ldn   %2
+	lbz   %3
+
+	ldn1 %1,%2
+	jnzU1 %1,%3
+;D*E*A*D  %1
+=
+	ldn    %2
+	lbnz   %3
+
+	ldn1 %1,%2
+	jzU1 %1,%3
+;D*E*A*D  %1
+=
+	ldn %2
+	lbz  %3
+
+	cpy2 %1,%2 
+	st2 %1,'O',sp,%3
+;D*E*A*D  %1
+=
+	st2 %2,'O',sp,%3
+
+	ldA2 %1,'O',sp,%2
+	str1I %3,%1
+;D*E*A*D  %1
+=
+	st1i  %3,'O',sp,%2
+
+	cpy2 %1,R15 
+	alu2 %2,%3,%1,add,adc
+;D*E*A*D  %4
+;D*E*A*D  %1
+=
+	alu2 %2,%3,R15,add,adc
+;D*E*A*D  %4
+

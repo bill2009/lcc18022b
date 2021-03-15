@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><head><title>optimule.c</title><link rev=made href="mailto:drh@microsoft.com">
+</head><body>
+<h1>optimule.c</h1><P><em>Links lead from uses of identifiers and labels to their definitions.</em></P>
+<ul>
+<LI>progbeg<ol><li><code>"-target=xr18CX"</code></li><li><code>"-target=symbolic"</code></li><li><code>"-html"</code></li><li><code>"-g,;"</code></li><li><code>"-volatile"</code></li><li><code>"C:\\Users\\bill\\AppData\\Local\\Temp/lcc166080.i"</code></li><li><code>"optimule.asm"</code></li></ol></LI>
+<LI>segment data</LI>
+<LI>export <a href="#2"><code>charptr</code></a></LI>
+<LI>global <a name="2"><code>charptr</code></a><ul><li>type=pointer to struct CharacterStruct</li><li>sclass=auto</li><li>scope=GLOBAL</li><li>flags=0</li><li>ref=0.000000</li></ul></LI>
+<LI>defaddress <a href="#1"><code>testchar</code></a></LI>
+<LI>export <a href="#3"><code>main</code></a></LI>
+<LI>segment text</LI>
+<LI>function<UL><li>f=<a name="3"><code>main</code></a><ul><li>type=int function(unsigned char)</li><li>sclass=auto</li><li>scope=GLOBAL</li><li>flags=0</li><li>ref=0.000000</li></ul></li><li>ncalls=0</li><li>caller<OL><li><a name="11"><code>y</code></a><ul><li>type=int</li><li>sclass=auto</li><li>scope=PARAM</li><li>flags=0</li><li>offset=0</li><li>ref=0.000000</li></ul></li></OL>
+</li><li>callee<OL><li><a name="12"><code>y</code></a><ul><li>type=unsigned char</li><li>sclass=auto</li><li>scope=PARAM</li><li>flags=0</li><li>offset=0</li><li>ref=1.000000</li></ul></li></OL>
+</li></UL>
+</LI>
+<LI>blockbeg off=0</LI>
+<LI>local <a name="13"><code>2</code></a><ul><li>type=int</li><li>sclass=register</li><li>scope=LOCAL</li><li>flags=generated</li><li>offset=0</li><li>ref=3.000000</li></ul></LI>
+<LI>blockend off=2</LI>
+<LI>emitcode<ul><li>2. ADDRFP2 <a href="#12"><code>y</code></a><br>
+6. ADDRFP2 <a href="#11"><code>y</code></a><br>
+5. INDIRI2 #6<br>
+4. CVIU2 #5 2<br>
+3. CVUU1 #4 2<br>
+<strong>1</strong>' ASGNU1 #2 #3 1 1<br>
+</li>;{
+optimule.c:20.0:
+;    return charptr->_y==y;
+optimule.c:21.11:
+<li>6. ADDRGP2 <a href="#2"><code>charptr</code></a><br>
+5. INDIRP2 #6<br>
+7. CNSTI2 1<br>
+4. ADDP2 #5 #7<br>
+3. INDIRU1 #4<br>
+2. CVUI2 #3 1<br>
+10. ADDRFP2 <a href="#12"><code>y</code></a><br>
+9. INDIRU1 #10<br>
+8. CVUI2 #9 1<br>
+<strong>1</strong>' NEI2 #2 #8 <a href="#6"><code>3</code></a><br>
+12. ADDRLP2 <a href="#13"><code>2</code></a><br>
+13. CNSTI2 1<br>
+<strong>11</strong>' ASGNI2 #12 #13 2 1<br>
+15. ADDRGP2 <a href="#8"><code>4</code></a><br>
+<strong>14</strong>' JUMPV #15<br>
+<a name="6"><code>3</code></a>:<br>
+18. ADDRLP2 <a href="#13"><code>2</code></a><br>
+19. CNSTI2 0<br>
+<strong>17</strong>' ASGNI2 #18 #19 2 1<br>
+<a name="8"><code>4</code></a>:<br>
+23. ADDRLP2 <a href="#13"><code>2</code></a><br>
+22. INDIRI2 #23<br>
+<strong>21</strong>' RETI2 #22<br>
+</li><li><a name="10"><code>1</code></a>:<br>
+</li></ul></LI>
+<LI>maxoff=2</LI>
+
+<LI>segment bss</LI>
+<LI>export <a href="#1"><code>testchar</code></a></LI>
+<LI>global <a name="1"><code>testchar</code></a><ul><li>type=struct CharacterStruct</li><li>sclass=auto</li><li>scope=GLOBAL</li><li>flags=addressed</li><li>ref=1.000000</li></ul></LI>
+<LI>space 4</LI>
+<LI>progend</LI>
+</ul>
+<hr><address>Tue May 12 18:50:32 2020
+</address>
+</body></html>

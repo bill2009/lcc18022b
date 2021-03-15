@@ -1,0 +1,13 @@
+	cpy2 %1,R15 ;LOADU2*(reg)
+	cpy1 %2,%1;LOADU1(reg)
+;%9
+=
+	cpy1 %2,R15 ;LOADU1(LOADU2*(reg)) opt2020-2
+;%9
+
+!spoiler
+	popr %1
+	popr %2
+=
+	popf %1	;opt11.3
+	popl %2	;opt11.3

@@ -1,0 +1,90 @@
+
+Microsoft DiskPart version 10.0.16299.15
+
+Copyright (C) Microsoft Corporation.
+On computer: DESKTOP-IM4I6JJ
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          476 GB  1024 KB        *
+  Disk 1    Online           14 GB  3072 KB
+
+
+
+
+DISKPART> select disk 1
+
+Disk 1 is now the selected disk.
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          476 GB  1024 KB        *
+* Disk 1    Online           14 GB  3072 KB
+
+
+DISKPART> list partition
+
+  Partition ###  Type              Size     Offset
+  -------------  ----------------  -------  -------
+  Partition 1    Primary             14 GB  4096 KB
+
+
+DISKPART> select partition 1
+
+Partition 1 is now the selected partition.
+
+DISKPART> delete partition
+
+DiskPart successfully deleted the selected partition.
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          476 GB  1024 KB        *
+* Disk 1    Online           14 GB    14 GB
+
+DISKPART> create partition primary size=4000
+
+DiskPart succeeded in creating the specified partition.
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          476 GB  1024 KB        *
+* Disk 1    Online           14 GB    10 GB
+
+DISKPART> filesystems
+
+Current File System
+
+  Type                 : RAW
+  Allocation Unit Size : 512
+  Flags : 00000000
+
+File Systems Supported for Formatting
+
+  Type                 : NTFS
+  Allocation Unit Sizes: 512, 1024, 2048, 4096 (Default), 8192, 16K, 32K, 64K, 128K, 256K, 512K, 1024K, 2048K
+
+  Type                 : FAT
+  Allocation Unit Sizes: 64K (Default)
+
+  Type                 : FAT32 (Default)
+  Allocation Unit Sizes: 1024, 2048, 4096 (Default), 8192, 16K, 32K
+
+  Type                 : exFAT
+  Allocation Unit Sizes: 512, 1024, 2048, 4096, 8192, 16K, 32K (Default), 64K, 128K, 256K, 512K, 1024K, 2048K, 4096K, 8192K, 16384K, 32768K
+
+DISKPART> format FS=FAT
+
+  100 percent completed
+
+DiskPart successfully formatted the volume.
+
+DISKPART>

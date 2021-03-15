@@ -1,0 +1,84 @@
+export spirec
+segment text
+function spirec type=unsigned char function(void) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+blockbeg off=0
+blockend off=0
+;unsigned char spirec(){return 0;}
+spireceiven.c:1.22:
+spireceiven.c:1.30:
+ 2. CNSTU1 0
+1' RETU1 #2
+ 1:
+maxoff=0
+export spiReceiveNb
+function spiReceiveNb type=void function(pointer to unsigned char,unsigned int) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=1
+caller where type=pointer to unsigned char sclass=auto scope=PARAM flags=0 offset=0 ref=0.000000
+caller n type=unsigned int sclass=auto scope=PARAM flags=0 offset=2 ref=0.000000
+callee where type=pointer to unsigned char sclass=register scope=PARAM flags=0 offset=0 ref=20.000000
+callee n type=unsigned int sclass=register scope=PARAM flags=0 offset=2 ref=20.000000
+blockbeg off=0
+blockbeg off=0
+blockend off=0
+blockend off=0
+ 2. ADDRFP2 where
+4. ADDRFP2 where
+3. INDIRP2 #4
+1' ASGNP2 #2 #3 2 1
+ 2. ADDRFP2 n
+4. ADDRFP2 n
+3. INDIRU1 #4
+1' ASGNU1 #2 #3 1 1
+;void spiReceiveNb(unsigned char * where, unsigned int n){
+spireceiven.c:2.56:
+ 2. ADDRGP2 4
+1' JUMPV #2
+ 3:
+;	while(n>0){
+spireceiven.c:3.11:
+;		*where=spiRec();
+spireceiven.c:4.2:
+ 2. ADDRGP2 spiRec
+1' CALLI1 #2 {int function}
+5. ADDRFP2 where
+4. INDIRP2 #5
+6. CVIU1 #1 1
+3' ASGNU1 #4 #6 1 1
+;		where++;
+spireceiven.c:5.2:
+ 2. ADDRFP2 count=2 where
+4. INDIRP2 #2
+5. CNSTI2 1
+3. ADDP2 #4 #5
+1' ASGNP2 #2 #3 2 1
+;		n--;
+spireceiven.c:6.2:
+ 2. ADDRFP2 count=2 n
+4. INDIRU1 #2
+5. CNSTU1 1
+3. SUBU1 #4 #5
+1' ASGNU1 #2 #3 1 1
+;	}
+spireceiven.c:7.1:
+ 4:
+;	while(n>0){
+spireceiven.c:3.7:
+ 3. ADDRFP2 n
+2. INDIRU1 #3
+4. CNSTU1 0
+1' NEU1 #2 #4 3
+;}
+spireceiven.c:8.0:
+ 2:
+maxoff=0
+export main
+function main type=void function(void) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+blockbeg off=0
+blockend off=0
+;void main(){}
+spireceiven.c:10.11:
+spireceiven.c:10.12:
+ 6:
+maxoff=0
+
+import spiRec
+progend

@@ -1,0 +1,36 @@
+export main
+segment text
+function main type=void function(void) sclass=auto scope=GLOBAL flags=0 ref=0.000000 ncalls=0
+blockbeg off=0
+local deltay type=signed char sclass=auto scope=LOCAL flags=0 offset=0 ref=1.500000
+local y type=unsigned char sclass=auto scope=LOCAL flags=0 offset=1 ref=1.000000
+local x type=unsigned char sclass=auto scope=LOCAL flags=0 offset=2 ref=0.000000
+local delay type=unsigned char sclass=auto scope=LOCAL flags=0 offset=3 ref=0.000000
+local collision type=unsigned char sclass=auto scope=LOCAL flags=0 offset=4 ref=0.000000
+local deltax type=signed char sclass=auto scope=LOCAL flags=0 offset=5 ref=0.000000
+blockend off=6
+;void main(){
+mule.c:2.11:
+;		if (deltay<0 && y==0)
+mule.c:6.6:
+ 4. ADDRLP2 deltay
+3. INDIRI1 #4
+2. CVII2 #3 1
+5. CNSTI2 count=2 0
+1' GEI2 #2 #5 2
+9. ADDRLP2 y
+8. INDIRU1 #9
+7. CVUI2 #8 1
+6' NEI2 #7 #5 2
+;			deltay=1;
+mule.c:7.3:
+ 2. ADDRLP2 deltay
+3. CNSTI1 1
+1' ASGNI1 #2 #3 1 1
+ 2:
+;}
+mule.c:8.0:
+ 1:
+maxoff=6
+
+progend

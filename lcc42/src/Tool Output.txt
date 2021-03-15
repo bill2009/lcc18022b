@@ -1,0 +1,8 @@
+compile simpler.c for symbolic target
+ty->size=1, inttype->size=2, unsignedtype->size=2
+ty->size=1, inttype->size=2, unsignedtype->size=2
+
+C:\lcc42\examples\devkit>copy simpler.asm simpler.sym 
+        1 file(s) copied.
+
+Tool completed successfully
